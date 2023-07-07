@@ -1,0 +1,109 @@
+
+.header {
+    font-size: 30px;
+    font-weight:bold;
+    margin-bottom: 5px;
+    color: white;
+    background-color: #6495ED;
+    padding: 10px;
+    
+    
+    
+  }
+  
+  .footer {
+    background-color: #6495ED;
+    padding: 40px;
+  }
+  .head{
+     font-size: 35px;
+     color: white;
+     font-family: Arial, Helvetica, sans-serif;
+     
+    
+  }
+ .title{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  
+ } 
+ .title:hover{
+  color: blue;
+  cursor: pointer;
+ }
+ :root {
+	--delay: 0;
+	--duration: 4s;
+	--iterations: infinite;
+}
+.head,
+.head::after {
+	animation-delay: var(--animation-delay, 2s);
+	animation-iteration-count: var(--iterations, 1);
+	animation-duration: var(--duration, 800ms);
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.head {
+	--animation-delay: var(--delay, 0);
+	--animation-duration: var(--duration, 800ms);
+	--animation-iterations: var(--iterations, 1);
+	position: relative;
+	font-size: 90%;
+	animation-name: clip-text;
+	color: #FFF;
+	white-space: nowrap;
+	cursor: default;
+	
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: 500;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #f2f98b;
+		transform: scaleX(0);
+		transform-origin: 0 50%;
+		pointer-events: none;
+		animation-name: text-revealer;
+	}
+	
+}
+
+
+@keyframes clip-text {
+	from {
+		clip-path: inset(0 100% 0 0);
+	}
+	to {
+		clip-path: inset(0 0 0 0);
+	}
+}
+
+
+@keyframes text-revealer {
+	
+	0%, 50% {
+		transform-origin: 0 50%;
+	}
+	
+	60%, 100% {
+		transform-origin: 100% 50%;		
+	}
+
+	
+	60% {
+		transform: scaleX(1);
+	}
+	
+	100% {
+		transform: scaleX(0);
+	}
+}
+ 
