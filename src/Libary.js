@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, Grid, Typography,Box } from '@mui/material';
 import './library.css';
-
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import AutoStoriesRoundedIcon from '@mui/icons-material/AutoStoriesRounded';
 import { Link } from 'react-router-dom';
+import { Margin } from '@mui/icons-material';
 
 const Library = () => {
   const [notes, setNotes] = useState([]);
- 
+
   useEffect(() => {
     const fetchNotes = async () => {
       try {
@@ -27,7 +29,7 @@ const Library = () => {
       
       <Box class="header">
         <Typography variant="h4" gutterBottom class="head" >
-          Library Notes
+          <AutoStoriesRoundedIcon style={{ fontSize: '1.5rem', verticalAlign: 'middle', marginRight: '8px' }}></AutoStoriesRoundedIcon>Library Notes
         </Typography>
       </Box>
       <Container sx={{ flex: '1 0 auto' }}>
@@ -36,7 +38,7 @@ const Library = () => {
             <Grid item xs={14} sm={8} md={6} key={note.id}>
               <div>
                 <Typography variant="h6" gutterBottom class="title">
-                 <Link  to={{ pathname: '/target', state:{ note } }}>{note.title}</Link> 
+                 <MenuBookIcon style={{ fontSize: '1.5rem', verticalAlign: 'middle', marginRight: '8px' }} ></MenuBookIcon><Link  class = "link"to="/target" state={ {note:note} }>{note.title}</Link> 
                 </Typography>
                 <Typography variant="body1" gutterBottom>
                   {note.description}

@@ -1,4 +1,3 @@
-
 .header {
     font-size: 30px;
     font-weight:bold;
@@ -10,36 +9,14 @@
     
     
   }
-  
-  .footer {
-    background-color: #6495ED;
-    padding: 40px;
-  }
   .head{
-     font-size: 35px;
-     color: white;
-     font-family: Arial, Helvetica, sans-serif;
-     
-    
-  }
- .title{
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: black;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-
- } 
- .title:hover{
-  color: #6495ED;
-  cursor: pointer;
+    font-size: 35px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform:uppercase;
+   
  }
- :root {
-	--delay: 0;
-	--duration: 4s;
-	--iterations: infinite;
-}
-.head,
+ .head,
 .head::after {
 	animation-delay: var(--animation-delay, 2s);
 	animation-iteration-count: var(--iterations, 1);
@@ -75,41 +52,6 @@
 	}
 	
 }
-.link{
-  text-decoration: none;
-  color: black;
-}
 .icon{
-  font-size: 2px;
-
+	color: #FFF;
 }
-@keyframes clip-text {
-	from {
-		clip-path: inset(0 100% 0 0);
-	}
-	to {
-		clip-path: inset(0 0 0 0);
-	}
-}
-
-
-@keyframes text-revealer {
-	
-	0%, 50% {
-		transform-origin: 0 50%;
-	}
-	
-	60%, 100% {
-		transform-origin: 100% 50%;		
-	}
-
-	
-	60% {
-		transform: scaleX(1);
-	}
-	
-	100% {
-		transform: scaleX(0);
-	}
-}
- 
